@@ -1,0 +1,22 @@
+{
+  "name": "test-firebase-auth",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dist/ && parcel build manifest.json --config @parcel/config-webextension --no-optimize"
+  },
+  "devDependencies": {
+    "@parcel/config-webextension": "^2.6.0",
+    "@types/chrome": "^0.0.190",
+    "parcel": "^2.6.0",
+    "prettier": "^2.6.2",
+    "process": "^0.11.10",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "firebase": "^9.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-firebaseui": "^6.0.0"
+  }
+}
