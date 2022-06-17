@@ -15,6 +15,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   const isMessageFromExtension = !!sender.tab;
   if (isMessageFromExtension && request.customAuthToken) {
     // We could potentially sign in multiple times, but that shouldn't cause problems.
+    chrome.storage.sync.set({ customAuthToken: request.customAuthToken });
     signInWithCustomToken(auth, request.customAuthToken).then(() => {
       // Periodically fetch a *new* custom auth token for content scripts to access,
       // since the original one remains valid for only an hour or so.
